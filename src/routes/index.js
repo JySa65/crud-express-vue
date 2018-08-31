@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models');
 
-router.get('/', async (req, res) => {
+router.get('/', async (req, res, next) => {
     const users = await db.UserModel.findAll({
         order:[
             ['createdAt', 'DESC'],
@@ -11,13 +11,13 @@ router.get('/', async (req, res) => {
     res.json(users);
 });
 
-router.post('/', async (req, res) => {
+router.post('/', async (req, res, next) => {
     const data = req.body;
     const user = await db.UserModel.create(data);
     res.json(user);
 })
 
-router.put('/:id', async (req, res) => {
+router.put('/:id', async (req, res, next) => {
     const id = req.params.id;
     const data = req.body;
     const user = await db.UserModel.update(data, { where: { id } });
@@ -25,7 +25,7 @@ router.put('/:id', async (req, res) => {
 
 })
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', async (req, res, next) => {
     const id = req.params.id;
     const user = await db.UserModel.destroy({ where: { id } });
     res.json('si');

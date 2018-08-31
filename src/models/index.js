@@ -8,9 +8,10 @@ const sequelize = new Sequelize({
     database: DB_NAME,
     username: DB_USER,
     password: DB_PASSWORD,
-    dialect: 'postgres',
-    host: "localhost",
-    port: 5432,
+    dialect: 'sqlite',
+    // host: "localhost",
+    // port: 5432,
+    storage: "database.sqlite"
 })
 
 const UserModel = sequelize.define('users', {

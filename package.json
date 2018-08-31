@@ -14,6 +14,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
     "dotenv": "^6.0.0",
     "es6-promise": "^4.2.4",
     "express": "^4.16.3",
@@ -23,6 +24,7 @@
     "pg": "^7.4.3",
     "pg-hstore": "^2.3.2",
     "sequelize": "^4.38.0",
+    "sqlite3": "^4.0.2",
     "vue": "^2.5.11"
   },
   "browserslist": [

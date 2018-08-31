@@ -1,8 +1,7 @@
 require('es6-promise').polyfill();
 require('isomorphic-fetch');
 
-const BASE_API = 'http://localhost:3000';
-const BASE_URL = `${BASE_API}/api`;
+const BASE_URL = `/api`;
 
 // POST method
 module.exports.postData = (url = ``, data = {}, token = null) => {
