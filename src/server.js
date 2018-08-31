@@ -1,9 +1,9 @@
 const path = require('path');
-const dotEnv = require('dotenv').config('../.env');
 const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const db = require('./models');
+const dotEnv = require('dotenv').config('../.env');
 const route = require('./routes');
 const cors = require('cors');
 
