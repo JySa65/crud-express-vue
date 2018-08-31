@@ -18,13 +18,15 @@ app.use(morgan('dev'));
 app.use(express.json());
 
 //rutas
+app.get("/", (req, res) => {
+    res.sendFile(__dirname, './public/index.html');
+})
 app.use('/api/users', route);
 
 // Export Static..
 const DIR_STATIC = path.resolve(__dirname, './public')
 app.use('static', express.static(DIR_STATIC));
 app.use(express.static(DIR_STATIC));
-
 
 const HOST = '0.0.0.0';
 const PORT = process.env.PORT || 3000;
