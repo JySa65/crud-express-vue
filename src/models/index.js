@@ -1,13 +1,9 @@
 const Sequelize = require('sequelize');
-const DB_NAME = process.env.DB_NAME
-const DB_USER = process.env.DB_USER
-const DB_PASSWORD = process.env.DB_PASSWORD
-
 
 const sequelize = new Sequelize({
-    database: DB_NAME,
-    username: DB_USER,
-    password: DB_PASSWORD,
+    database: "databse",
+    username: "username",
+    password: "password",
     dialect: 'sqlite',
     // host: "localhost",
     // port: 5432,
