@@ -5,8 +5,10 @@
 ## Requirements
 * Node
 * NPM or YARN
+* Docker
+* Docker Compose
 
-### Set Var Environment
+## Set Var Environment
 
 1. Copy to `env.example` into `.env`
 
@@ -15,6 +17,32 @@
 1. Edit values in `.env`
 
         nano .env
+
+# With Docker
+
+## Init Docker
+
+### Create Image crud/vue
+```bash
+docker build -t crud/vue
+docker tag crud/vue crud/vue
+```
+
+### Init project
+```bash
+docker-compose up
+```
+
+### External Commands
+```bash
+# Start Server for production
+docker-compose run web yarn start
+
+# Static build for production with minification
+docker-compose run web yarn run build
+```
+
+# With Yarn
 
 ### Install dependencies
 ``` bash

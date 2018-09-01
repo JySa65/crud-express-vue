@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    image: crud/vue
+    command: yarn run server:dev
+    volumes:
+      - .:/webapp
+    ports:
+      - "3000:3000"
+
+  static:
+    image: crud/vue
+    command: yarn run dev
+    volumes:
+      - .:/webapp
