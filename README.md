@@ -8,61 +8,51 @@
 * Docker
 * Docker Compose
 
-## Set Var Environment
-
-1. Copy to `env.example` into `.env`
-
-        cp env.example .env
-
-1. Edit values in `.env`
-
-        nano .env
-
 # With Docker
 
 ## Init Docker
 
 ### Create Image crud/vue
 ```bash
-docker build -t crud/vue
-docker tag crud/vue crud/vue
+$ docker build -t crud/vue
+$ docker tag crud/vue crud/vue
 ```
 
 ### Init project
 ```bash
-docker-compose up
+$ docker-compose up
 ```
 
 ### External Commands
 ```bash
 # Start Server for production
-docker-compose run web yarn start
+$ docker-compose run web yarn start
 
 # Static build for production with minification
-docker-compose run web yarn run build
+$ docker-compose run web yarn run build
 ```
 
 # With Yarn
 
 ### Install dependencies
 ``` bash
-yarn install
+$ yarn install
 ```
 ### Build Static Setup
 
 ``` bash
 # build for development
-yarn run dev
+$ yarn run dev
 
 # build for production with minification
-yarn run build
+$ yarn run build
 ```
 
 ### Build Server Setup
 ``` bash
 # build for development
-yarn run server:dev
+$ yarn run server:dev
 
 # build for production with minification
-yarn start
+$ yarn start
 ```
