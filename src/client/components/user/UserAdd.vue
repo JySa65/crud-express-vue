@@ -56,8 +56,16 @@ export default {
   },
   methods: {
     addUser() {
+      const name = document.querySelector("#id_name").value
+      const last_name = document.querySelector("#id_last_name").value
+      const email = document.querySelector("#id_email").value
+      let data = {
+        name,
+        last_name,
+        email
+      }
       if (!this.updaUser) {
-        fetch.postData("/users/", this.user)
+        fetch.postData("/users/", data)
         .then(data => {
           eventBus.$emit("user-add", data);
           this.cleanInput();
@@ -66,7 +74,7 @@ export default {
           console.log(`Error en insertar: ${error}`)
         });
       } else {
-        fetch.putData(`/users/${this.user.id}`, this.user)
+        fetch.putData(`/users/${this.user.id}`, data)
         .then(data => {
           this.cleanInput();
           this.updaUser = false;

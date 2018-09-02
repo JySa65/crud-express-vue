@@ -19,14 +19,12 @@ const UserModel = sequelize.define('users', {
     name: {
         type: Sequelize.STRING,
         validate: {
-            is: ["^[a-z]+$", 'i'],
             len: [4, 50]
         }
     },
     last_name: {
         type: Sequelize.STRING,
         validate: {
-            is: ["^[a-z]+$", 'i'],
             len: [4, 50]
         }
     },
