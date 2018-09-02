@@ -58,6 +58,9 @@ export default {
           .then(data => {
              this.users = data
           })
+          .catch(error =>{ 
+            console.log(`Error en obtener lista: ${error}`)
+          })
       }
   }
 };

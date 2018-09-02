@@ -57,14 +57,22 @@ export default {
   methods: {
     addUser() {
       if (!this.updaUser) {
-        fetch.postData("/users/", this.user).then(data => {
+        fetch.postData("/users/", this.user)
+        .then(data => {
           eventBus.$emit("user-add", data);
           this.cleanInput();
+        })
+        .catch(error => {
+          console.log(`Error en insertar: ${error}`)
         });
       } else {
-        fetch.putData(`/users/${this.user.id}`, this.user).then(data => {
+        fetch.putData(`/users/${this.user.id}`, this.user)
+        .then(data => {
           this.cleanInput();
           this.updaUser = false;
+        })
+        .catch(error => {
+          console.log(`Error en actualizar: ${error}`)
         });
       }
     },

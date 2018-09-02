@@ -18,7 +18,6 @@ const UserModel = sequelize.define('users', {
     },
     name: {
         type: Sequelize.STRING,
-        allowNull: false,
         validate: {
             is: ["^[a-z]+$", 'i'],
             len: [4, 50]
@@ -26,7 +25,6 @@ const UserModel = sequelize.define('users', {
     },
     last_name: {
         type: Sequelize.STRING,
-        allowNull: false,
         validate: {
             is: ["^[a-z]+$", 'i'],
             len: [4, 50]
@@ -34,7 +32,6 @@ const UserModel = sequelize.define('users', {
     },
     email: {
         type: Sequelize.STRING,
-        allowNull: false,
         validate: {
             isEmail: true
         }
